@@ -19,7 +19,7 @@ public class Lab2P2_GabrielGiron_12051024 {
         // TODO code application logic here
         AnimalesPorDefecto();
         int opcion = -1;
-        while(opcion != 5)
+        while(opcion != 6)
         {
             opcion = Integer.parseInt(
                     JOptionPane.showInputDialog(
@@ -27,7 +27,8 @@ public class Lab2P2_GabrielGiron_12051024 {
                             "2) Editar Animal\n"+
                             "3) Imprimir Animal\n"
                           + "4) Alimentar Animal\n"
-                          + "5)Salir"
+                          + "5) Eliminar Animal\n"
+                          + "6)Salir"
                     ));
             switch(opcion)
             {
@@ -48,6 +49,7 @@ public class Lab2P2_GabrielGiron_12051024 {
                 }
                 case 4:
                 {
+                    
                     break;
                 }
             }
@@ -169,7 +171,7 @@ public class Lab2P2_GabrielGiron_12051024 {
                 String Salida = "";
                 for (int i = 0; i < Animales.size(); i++) 
                 {
-                    Salida = Salida + Animales.get(i).toString() + "\n";
+                    Salida = Salida + "[" +  i + "]" + Animales.get(i).toString() + "\n";
                 }
                 JOptionPane.showMessageDialog(null, Salida);
                 break;
@@ -325,6 +327,25 @@ public class Lab2P2_GabrielGiron_12051024 {
                 }
                 break;
             }
+        }
+    }
+    
+    public static void Alimentar()
+    {
+        
+    }
+    
+    public static void Eliminar()
+    {
+        int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del animal en la lista"));
+        if(pos < Animales.size())
+        {
+            Animales.remove(pos);
+            JOptionPane.showMessageDialog(null, "Animal Eliminado Exitosamente");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Numero Ingresado es mayor que el tamaño de la Lista");
         }
     }
 }
