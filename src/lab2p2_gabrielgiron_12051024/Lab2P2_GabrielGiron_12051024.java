@@ -38,7 +38,7 @@ public class Lab2P2_GabrielGiron_12051024 {
                 }
                 case 2:
                 {
-                    
+                    Editar();
                     break;
                 }
                 case 3:
@@ -139,9 +139,137 @@ public class Lab2P2_GabrielGiron_12051024 {
     {
         String Nombre = JOptionPane.showInputDialog("Ingrese el nombre cientifico del animal que se editara");
         for (int i = 0; i < Animales.size(); i++) {
-            if(Nombre.equals(Animales.get(i).getNombre()))
+            if(Nombre.equals(Animales.get(i).getNombreCientifico()))
             {
                 int OP = Integer.parseInt(JOptionPane.showInputDialog("1)Editar solo 1 Atributo\n 2)Editar Todo"));
+                if(OP == 1)
+                {
+                    int O = Integer.parseInt(JOptionPane.showInputDialog(
+                            "1)Editar Nombre Cientifico\n"
+                                    + "2)Editar Nombre\n"
+                                    + "3)Editar Habitat\n"
+                                    + "4)Editar Alimentacion\n"
+                                    + "5)Editar Rasgos\n"
+                                    + "6)Editar Distribucion Geografica\n"
+                                    + "7)Editar Vida\n"
+                    ));
+                    switch(O)
+                    {
+                        case 1:
+                        {
+                            String E = JOptionPane.showInputDialog("Ingrese el Nuevo Nombre Cientifico");
+                            Animales.get(i).setNombreCientifico(E);
+                            break;
+                        }
+                        case 2:
+                        {
+                            String E = JOptionPane.showInputDialog("Ingrese el Nuevo Nombre");
+                            Animales.get(i).setNombre(E);
+                            break;
+                        }
+                        case 3:
+                        {
+                            String E = JOptionPane.showInputDialog("Ingrese el Nuevo Habitat");
+                            Animales.get(i).setHabitat(E);
+                            break;
+                        }
+                        case 4:
+                        {
+                            String H = "";
+                            int E = Integer.parseInt(
+                                    JOptionPane.showInputDialog(
+                                            "Eliga la nueva Alimentacion: \n "
+                                                    + "1) Carnivoro\n"
+                                                    + "2) Herbivoro\n"
+                                                    + "3) Omnivoro\n"
+                                                    + "4) Descomponedores"
+                                    ));
+                            if(E == 1)
+                                H = "Carnivoro";
+                            
+                            if(E == 2)
+                                H = "Herbivoro";
+                            
+                            if(E == 3)
+                                H = "Omnivoro";
+                            
+                            if(E == 4)
+                                H = "Descomponedores";
+                            
+                            Animales.get(i).setAlimentacion(H);
+                            break;
+                        }
+                        case 5:
+                        {
+                            String E = JOptionPane.showInputDialog("Ingrese el Nuevo Rasgo");
+                            Animales.get(i).setRasgos(E);
+                            break;
+                        }
+                        case 6:
+                        {
+                            String E = JOptionPane.showInputDialog("Ingrese la nueva Distribucion Geografica");
+                            Animales.get(i).setDistribucionGeografica(E);
+                            break;
+                        }
+                        case 7:
+                        {
+                            int E = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva vida del animal"));
+                            Animales.get(i).setVida(E);
+                            break;
+                        }
+                    }
+                }
+                
+                if(OP == 2)
+                {
+                    //Nombre Cientifico
+                    String NC = JOptionPane.showInputDialog("Ingrese el Nuevo Nombre Cientifico");
+                    Animales.get(i).setNombreCientifico(NC);
+                    
+                    //Nombre
+                    String N = JOptionPane.showInputDialog("Ingrese el Nuevo Nombre");
+                    Animales.get(i).setNombre(N);
+                    
+                    //Habitat
+                    String H = JOptionPane.showInputDialog("Ingrese el Nuevo Habitat");
+                    Animales.get(i).setHabitat(H);
+                    
+                    //Alimentacion
+                    String A = "";
+                    int E = Integer.parseInt(
+                            JOptionPane.showInputDialog(
+                                    "Eliga la nueva Alimentacion: \n "
+                                            + "1) Carnivoro\n"
+                                            + "2) Herbivoro\n"
+                                            + "3) Omnivoro\n"
+                                            + "4) Descomponedores"
+                            ));
+                    if(E == 1)
+                        A = "Carnivoro";
+
+                    if(E == 2)
+                        A = "Herbivoro";
+
+                    if(E == 3)
+                        A = "Omnivoro";
+
+                    if(E == 4)
+                        A = "Descomponedores";
+                    Animales.get(i).setAlimentacion(H);
+                    
+                    //Rasgo
+                    String R = JOptionPane.showInputDialog("Ingrese el Nuevo Rasgo");
+                    Animales.get(i).setRasgos(R);
+                    
+                    //Distribucion Geografica
+                    String DB = JOptionPane.showInputDialog("Ingrese la nueva Distribucion Geografica");
+                    Animales.get(i).setDistribucionGeografica(DB);
+                    
+                    //Vida
+                    int V = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva vida del animal"));
+                    Animales.get(i).setVida(V);
+                }
+                break;
             }
         }
     }
