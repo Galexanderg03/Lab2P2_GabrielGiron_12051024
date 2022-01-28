@@ -336,7 +336,14 @@ public class Lab2P2_GabrielGiron_12051024 {
     
     public static void Alimentar()
     {
-        
+        int pos1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del animal que sera alimentado en la lista"));
+        int pos2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del animal que sera devorado en la lista"));
+        int vida1 = Animales.get(pos1).getVida();
+        int vida2 = Animales.get(pos2).getVida();
+        int NVida = vida1 + vida2;
+        Animales.get(pos1).setVida(NVida);
+        Animales.remove(pos2);
+        JOptionPane.showMessageDialog(null, "Animal Alimentado Exitosamente");
     }
     
     public static void Eliminar()
