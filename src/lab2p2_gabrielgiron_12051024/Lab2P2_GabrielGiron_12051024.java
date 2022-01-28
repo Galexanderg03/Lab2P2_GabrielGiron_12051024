@@ -46,6 +46,10 @@ public class Lab2P2_GabrielGiron_12051024 {
                     Imprimir();
                     break;
                 }
+                case 4:
+                {
+                    break;
+                }
             }
         }
     }
@@ -127,6 +131,17 @@ public class Lab2P2_GabrielGiron_12051024 {
                     }
                 }
                 break;
+            }
+        }
+    }
+    
+    public static void Editar()
+    {
+        String Nombre = JOptionPane.showInputDialog("Ingrese el nombre cientifico del animal que se editara");
+        for (int i = 0; i < Animales.size(); i++) {
+            if(Nombre.equals(Animales.get(i).getNombre()))
+            {
+                int OP = Integer.parseInt(JOptionPane.showInputDialog("1)Editar solo 1 Atributo\n 2)Editar Todo"));
             }
         }
     }
