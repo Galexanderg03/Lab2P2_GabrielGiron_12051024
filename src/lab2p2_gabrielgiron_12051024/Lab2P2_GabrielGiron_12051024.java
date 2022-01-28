@@ -49,8 +49,12 @@ public class Lab2P2_GabrielGiron_12051024 {
                 }
                 case 4:
                 {
-                    
+                    Alimentar();
                     break;
+                }
+                case 5:
+                {
+                    Eliminar();
                 }
             }
         }
