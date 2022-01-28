@@ -87,6 +87,60 @@ public class Lab2P2_GabrielGiron_12051024 {
         Animales.add(new Animal(NombreCientifico3, Nombre3, Habitat3, Alimentacion3, Rasgos3, Geografia3, Vida3));
     }
     
+    public static void Agregar()
+    {
+        int centinela = 0;
+        String NC = JOptionPane.showInputDialog("Ingrese el nombre cientifico del animal");
+        for (int i = 0; i < Animales.size(); i++) {
+            if(Animales.get(i).getNombreCientifico().equals(NC))
+                centinela = 1;
+        }
+        if(centinela == 1)
+        {
+            JOptionPane.showMessageDialog(null, "El Nombre Cientifico ya esta en la lista");
+        }
+        else
+        {
+            //Nombre
+            String N = JOptionPane.showInputDialog("Ingrese el Nuevo Nombre");
+
+            //Habitat
+            String H = JOptionPane.showInputDialog("Ingrese el Nuevo Habitat");
+
+            //Alimentacion
+            String A = "";
+            int E = Integer.parseInt(
+                    JOptionPane.showInputDialog(
+                            "Eliga la nueva Alimentacion: \n "
+                                    + "1) Carnivoro\n"
+                                    + "2) Herbivoro\n"
+                                    + "3) Omnivoro\n"
+                                    + "4) Descomponedores"
+                    ));
+            if(E == 1)
+                A = "Carnivoro";
+
+            if(E == 2)
+                A = "Herbivoro";
+
+            if(E == 3)
+                A = "Omnivoro";
+
+            if(E == 4)
+                A = "Descomponedores";
+
+            //Rasgo
+            String R = JOptionPane.showInputDialog("Ingrese el Nuevo Rasgo");
+
+            //Distribucion Geografica
+            String DB = JOptionPane.showInputDialog("Ingrese la nueva Distribucion Geografica");
+
+            //Vida
+            int V = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva vida del animal"));
+            Animales.add(e)
+        }
+    }
+    
     public static void Imprimir()
     {
         int OP = Integer.parseInt(JOptionPane.showInputDialog(
