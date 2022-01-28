@@ -33,7 +33,7 @@ public class Lab2P2_GabrielGiron_12051024 {
             {
                 case 1:
                 {
-                    
+                    Agregar();
                     break;
                 }
                 case 2:
@@ -137,7 +137,7 @@ public class Lab2P2_GabrielGiron_12051024 {
 
             //Vida
             int V = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva vida del animal"));
-            Animales.add(e)
+            Animales.add(new Animal(NC,N,H,A,R,DB,V));
         }
     }
     
